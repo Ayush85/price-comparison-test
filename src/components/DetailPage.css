@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+
+.detail-page h2 {
+  margin: 10px;
+  margin-left: 45px;
+  font-size: 32px;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column1 img {
+  width: 400px;
+  height: 400px;
+  margin: 20px;
+  margin-top: 0px;
+}
+.column2 {
+  flex: 20%;
+}
