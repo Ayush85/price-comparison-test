@@ -4,19 +4,17 @@ import { useParams } from "react-router";
 import axios from "axios";
 
 function DetailPage() {
-  const { id } = useParams();
+  const { _id } = useParams();
   const [a, setData] = useState(null);
   const [load, setLoad] = useState(true);
   useEffect(() => {
     async function fetchData() {
-      const { data } = await axios.get(
-        `https://price-comparison-server.herokuapp.com/creators/${id}`
-      );
+      const { data } = await axios.get(`http://localhost:3001/creators/${_id}`);
       setData(data);
       setLoad(false);
     }
     fetchData();
-  }, [id]);
+  }, [_id]);
 
   return (
     <>
