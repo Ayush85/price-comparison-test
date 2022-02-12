@@ -1,11 +1,12 @@
+import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { axiosInstance } from "../../../config";
+//import { axiosInstance } from "../config";
 
 function Card() {
   const [Data, setData] = useState([]);
 
   useEffect(() => {
-    axiosInstance.get("/creators").then((response) => {
+    axios.get("http://localhost:3001/creators").then((response) => {
       setData(response.data);
     });
   });

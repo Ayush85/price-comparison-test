@@ -1,7 +1,8 @@
 import "./DetailPage.css";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
-import { axiosInstance } from "../../../config";
+//import { axiosInstance } from "../config";
+import axios from "axios";
 
 function DetailPage() {
   const { id } = useParams();
@@ -9,9 +10,7 @@ function DetailPage() {
   const [load, setLoad] = useState(true);
   useEffect(() => {
     async function fetchData() {
-      const { data } = await axiosInstance.get(
-        `http://localhost:3001/creators/${id}`
-      );
+      const { data } = await axios.get(`http://localhost:3001/creators/${id}`);
       setData(data);
       setLoad(false);
     }
