@@ -1,14 +1,15 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-//import { axiosInstance } from "../config";
 
 function Card() {
   const [Data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3001/creators").then((response) => {
-      setData(response.data);
-    });
+    axios
+      .get("https://price-comparison-server.herokuapp.com/creators")
+      .then((response) => {
+        setData(response.data);
+      });
   });
   const newdata = Data.map((data) => {
     return (
