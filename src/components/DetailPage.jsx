@@ -9,7 +9,9 @@ function DetailPage() {
   const [load, setLoad] = useState(true);
   useEffect(() => {
     async function fetchData() {
-      const { data } = await axios.get(`http://localhost:3001/creators/${_id}`);
+      const { data } = await axios.get(
+        `https://price-comparison-server.herokuapp.com//${_id}`
+      );
       setData(data);
       setLoad(false);
     }
