@@ -10,7 +10,7 @@ function DetailPage() {
   useEffect(() => {
     async function fetchData() {
       const { data } = await axios.get(
-        `https://price-comparison-server.herokuapp.com//${_id}`
+        `https://price-comparison-server.herokuapp.com/${_id}`
       );
       setData(data);
       setLoad(false);
